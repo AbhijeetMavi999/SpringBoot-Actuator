@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: spring-actuator
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring-actuator
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+      # exposing all endpoints of actuator
+        #include: "*"
+      # exposing selected endpoints
+        #include: beans, loggers, health
+
+# exposing health endpoint in details
+#management:
+#  endpoint:
+#    health:
+#      show-details: always
+
+# change the base path from /actuator to /manage
+management:
+  endpoints:
+    web:
+      base-path: "/manage"
